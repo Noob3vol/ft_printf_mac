@@ -6,11 +6,24 @@
 /*   By: iguidado <iguidado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 11:48:07 by iguidado          #+#    #+#             */
-/*   Updated: 2020/04/10 08:18:47 by iguidado         ###   ########.fr       */
+/*   Updated: 2020/05/11 04:15:42 by iguidado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	ftpf_perc(t_format *fmt)
+{
+	int count;
+
+	count = 0;
+	fmt->preci = 1;
+	count += ftpf_padding_left(*fmt);
+	count += ftpf_padding_0(*fmt);
+	count = write(1, "%", 1);
+	count += ftpf_padding_right(*fmt);
+	return (count);
+}
 
 int	ftpf_post_str(const char **str)
 {
