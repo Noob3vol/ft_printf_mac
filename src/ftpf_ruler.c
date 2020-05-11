@@ -6,7 +6,7 @@
 /*   By: iguidado <iguidado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 14:48:28 by iguidado          #+#    #+#             */
-/*   Updated: 2020/05/11 04:13:35 by iguidado         ###   ########.fr       */
+/*   Updated: 2020/05/11 04:35:46 by iguidado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ int	ftpf_ruler_p(unsigned long nbr, int preci)
 {
 	int nbrlen;
 
+	if (!nbr && !preci)
+		return (2);
 	nbrlen = 1;
 	while (nbr > 15)
 	{
