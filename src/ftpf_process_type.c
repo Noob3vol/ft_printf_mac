@@ -6,7 +6,7 @@
 /*   By: iguidado <iguidado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 16:33:57 by iguidado          #+#    #+#             */
-/*   Updated: 2020/05/11 04:35:29 by iguidado         ###   ########.fr       */
+/*   Updated: 2020/05/11 04:40:02 by iguidado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	ftpf_p(unsigned long nbr, t_format *fmt)
 	count += ftpf_padding_left(*fmt);
 	count += write(1, "0x", 2);
 	count += ftpf_padding_0(*fmt);
-	if (nbr || preci > 2)
+	if (nbr || fmt->preci > 2)
 		count += ftpf_putf_p(nbr, fmt->preci - 2);
 	count += ftpf_padding_right(*fmt);
 	return (count);
@@ -75,7 +75,7 @@ int	ftpf_process_type(const char **str, va_list ap)
 	if (!(fmt.type = **str))
 		return (-1);
 	if (fmt.type == '%')
-		ftpf_prec(&fmt);
+		ftpf_perc(&fmt);
 	else if (fmt.type == 'c')
 		count = ftpf_c((unsigned char)va_arg(ap, int), &fmt);
 	else if (fmt.type == 's')
