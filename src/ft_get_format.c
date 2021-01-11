@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftpf_get_format.c                                  :+:      :+:    :+:   */
+/*   ft_get_format.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iguidado <iguidado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char		ftpf_get_flags(const char **str)
+char		ft_get_flags(const char **str)
 {
 	char		msk;
 
@@ -28,7 +28,7 @@ char		ftpf_get_flags(const char **str)
 	return (msk);
 }
 
-int			ftpf_get_fields(const char **str, va_list arg)
+int			ft_get_fields(const char **str, va_list arg)
 {
 	int field;
 
@@ -50,12 +50,12 @@ int			ftpf_get_fields(const char **str, va_list arg)
 	return (field);
 }
 
-t_format	ftpf_get_format(const char **str, va_list arg)
+t_format	ft_get_format(const char **str, va_list arg)
 {
 	t_format fmt;
 
-	fmt.msk_flag = ftpf_get_flags(str);
-	fmt.field = ftpf_get_fields(str, arg);
+	fmt.msk_flag = ft_get_flags(str);
+	fmt.field = ft_get_fields(str, arg);
 	if (fmt.field < 0)
 	{
 		fmt.field = -fmt.field;
@@ -66,7 +66,7 @@ t_format	ftpf_get_format(const char **str, va_list arg)
 	else
 	{
 		(*str)++;
-		fmt.preci = ftpf_get_fields(str, arg);
+		fmt.preci = ft_get_fields(str, arg);
 		fmt.msk_flag &= ~FLAG_0;
 	}
 	return (fmt);

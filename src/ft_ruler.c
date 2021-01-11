@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftpf_ruler.c                                       :+:      :+:    :+:   */
+/*   ft_format_ruler.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iguidado <iguidado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-int	ftpf_ruler_i(int nbr, int preci)
+int	ft_ruler_i(int nbr, int preci)
 {
 	int nbrlen;
 	int neg;
@@ -32,7 +32,7 @@ int	ftpf_ruler_i(int nbr, int preci)
 	return (nbrlen + neg);
 }
 
-int	ftpf_ruler_u(unsigned int nbr, int preci)
+int	ft_ruler_u(unsigned int nbr, int preci)
 {
 	int nbrlen;
 
@@ -49,7 +49,7 @@ int	ftpf_ruler_u(unsigned int nbr, int preci)
 	return (nbrlen);
 }
 
-int	ftpf_ruler_x(unsigned int nbr, int preci)
+int	ft_ruler_x(unsigned int nbr, int preci)
 {
 	int nbrlen;
 
@@ -66,7 +66,7 @@ int	ftpf_ruler_x(unsigned int nbr, int preci)
 	return (nbrlen);
 }
 
-int	ftpf_ruler_p(unsigned long nbr, int preci)
+int	ft_ruler_p(unsigned long nbr, int preci)
 {
 	int nbrlen;
 
@@ -83,7 +83,7 @@ int	ftpf_ruler_p(unsigned long nbr, int preci)
 	return (nbrlen + 2);
 }
 
-int	ftpf_ruler_s(char *str, int preci)
+int	ft_ruler_s(char *str, int preci)
 {
 	if (!str && (preci < 0 || preci >= 6))
 		return (6);

@@ -1,16 +1,16 @@
-
 #Name
+
 NAME = libftprintf.a
 
 LIB = libft.a
 
 SRC = ft_printf.c\
-	ftpf_get_format.c\
-	ftpf_process_type.c\
-	ftpf_ruler.c\
-	ftpf_putf.c\
-	ftpf_nbr.c\
-	ftpf_prefix.c
+	ft_get_format.c\
+	ft_process_type.c\
+	ft_ruler.c\
+	ft_putf.c\
+	ft_format_nbr.c\
+	ft_padding.c
 
 MAIN_TEST = test.c
 

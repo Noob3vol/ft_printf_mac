@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftpf_prefix.c                                      :+:      :+:    :+:   */
+/*   ft_format_prefix.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iguidado <iguidado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ftpf_padding_left(t_format fmt)
+int	ft_padding_left(t_format fmt)
 {
 	int count;
 
@@ -27,7 +27,7 @@ int	ftpf_padding_left(t_format fmt)
 	return (count);
 }
 
-int	ftpf_padding_0(t_format fmt)
+int	ft_padding_0(t_format fmt)
 {
 	int count;
 
@@ -42,7 +42,7 @@ int	ftpf_padding_0(t_format fmt)
 	return (count);
 }
 
-int	ftpf_padding_right(t_format fmt)
+int	ft_padding_right(t_format fmt)
 {
 	int count;
 
