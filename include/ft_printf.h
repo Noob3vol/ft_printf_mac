@@ -6,7 +6,7 @@
 /*   By: iguidado <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 14:57:50 by iguidado          #+#    #+#             */
-/*   Updated: 2021/01/06 15:00:32 by iguidado         ###   ########.fr       */
+/*   Updated: 2021/01/11 13:29:35 by iguidado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define BASE10		"0123456789"
 # define BASE16_LOW	"0123456789abcdef"
 # define BASE16_UPP	"0123456789ABCDEF"
-# define FLAGS		"0-+#'"
+# define FLAGS		"0-"
 # define FLAG_ALL	3
 # define FLAG_MIN	2
 # define FLAG_0		1
