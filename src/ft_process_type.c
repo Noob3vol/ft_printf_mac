@@ -6,7 +6,7 @@
 /*   By: iguidado <iguidado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 16:33:57 by iguidado          #+#    #+#             */
-/*   Updated: 2021/02/15 13:43:12 by iguidado         ###   ########.fr       */
+/*   Updated: 2021/02/15 14:14:29 by iguidado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_putf_s(char *str, int len)
 	i = 0;
 	if (!str)
 	{
-		len = len >= 6 ? 6 : len;
+	//	ft_putnbr(len);
 		count += write(1, "(null)", len);
 	}
 	else
@@ -46,6 +46,8 @@ int	ft_format_s(char *str, t_format *fmt)
 	int		count;
 
 	count = 0;
+	if (!str)
+		str = "(null)";
 	fmt->preci = ft_ruler_s(str, fmt->preci);
 	count += ft_padding_left(*fmt);
 	count += ft_putf_s(str, fmt->preci);
