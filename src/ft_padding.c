@@ -6,7 +6,7 @@
 /*   By: iguidado <iguidado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 16:24:20 by iguidado          #+#    #+#             */
-/*   Updated: 2021/02/15 23:22:55 by iguidado         ###   ########.fr       */
+/*   Updated: 2021/02/15 23:25:45 by iguidado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_padding_0(t_format fmt)
 {
 	int count;
 
-	if (!(fmt.msk_flag & FLAG_0))
+	if ((fmt.msk_flag & FLAG_ALL) != FLAG_MIN)
 		return (0);
 	count = 0;
 	while (fmt.field > fmt.preci)
