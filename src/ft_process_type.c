@@ -6,7 +6,7 @@
 /*   By: iguidado <iguidado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 16:33:57 by iguidado          #+#    #+#             */
-/*   Updated: 2020/05/11 04:49:32 by iguidado         ###   ########.fr       */
+/*   Updated: 2021/02/15 13:43:12 by iguidado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,12 @@ int	ft_putf_s(char *str, int len)
 
 	count = 0;
 	i = 0;
-	if (!str && len == 6)
+	if (!str)
+	{
+		len = len >= 6 ? 6 : len;
 		count += write(1, "(null)", len);
-	else if (str)
+	}
+	else
 		count += write(1, str, len);
 	return (count);
 }
