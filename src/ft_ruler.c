@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_format_ruler.c                                       :+:      :+:    :+:   */
+/*   ft_ruler.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iguidado <iguidado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 14:48:28 by iguidado          #+#    #+#             */
-/*   Updated: 2020/05/11 04:35:46 by iguidado         ###   ########.fr       */
+/*   Updated: 2021/02/15 14:06:45 by iguidado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,6 @@ int	ft_ruler_s(char *str, int preci)
 {
 	if (!str && (preci < 0 || preci >= 6))
 		return (6);
-	else if (!str)
-		return (0);
 	if (preci <= -1 || (int)ft_strlen(str) < preci)
 		return (ft_strlen(str));
 	return (preci);
