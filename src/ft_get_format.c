@@ -6,7 +6,7 @@
 /*   By: iguidado <iguidado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 14:44:56 by iguidado          #+#    #+#             */
-/*   Updated: 2021/02/15 23:43:22 by iguidado         ###   ########.fr       */
+/*   Updated: 2021/02/16 00:02:09 by iguidado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_format	ft_get_format(const char **str, va_list arg)
 	{
 		(*str)++;
 		fmt.preci = ft_get_fields(str, arg);
-		if (fmt.preci >= 0)
+		if (fmt.preci >= 0 && **str != '%')
 			fmt.msk_flag &= ~FLAG_0;
 	}
 	return (fmt);

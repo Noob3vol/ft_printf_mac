@@ -6,7 +6,7 @@
 /*   By: iguidado <iguidado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 11:48:07 by iguidado          #+#    #+#             */
-/*   Updated: 2021/01/10 23:25:25 by iguidado         ###   ########.fr       */
+/*   Updated: 2021/02/15 23:48:56 by iguidado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_format_perc(t_format *fmt)
 	fmt->preci = 1;
 	count += ft_padding_left(*fmt);
 	count += ft_padding_0(*fmt);
-	count = write(1, "%", 1);
+	count += write(1, "%", 1);
 	count += ft_padding_right(*fmt);
 	return (count);
 }
