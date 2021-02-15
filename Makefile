@@ -49,8 +49,8 @@ FLAG = $(F_DBG) $(F_WAR) $(F_INC)
 all : $(NAME)
 
 $(NAME) : $(OBJS) $(LIB)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	cp $(D_LIB)/$(LIB) $(NAME)
+	ar rcs $(NAME) $(OBJS)
 
 test : $(NAME) $(P_HDR_LIB) $(P_HDR)
 	$(CC) $(FLAG) $(MAIN_TEST) $(NAME) $(D_LIB)/$(LIB)
