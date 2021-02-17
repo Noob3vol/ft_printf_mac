@@ -6,11 +6,11 @@ LIB = libft.a
 
 SRC = ft_printf.c\
 	ft_get_format.c\
-	ft_process_type.c\
 	ft_ruler.c\
-	ft_putf.c\
+	ft_padding.c\
 	ft_format_nbr.c\
-	ft_padding.c
+	ft_format_c.c\
+	ft_putf.c
 
 MAIN_TEST = test.c
 

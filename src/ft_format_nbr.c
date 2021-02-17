@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbr.c                                           :+:      :+:    :+:   */
+/*   ft_format_nbr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iguidado <iguidado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -66,6 +66,21 @@ int	ft_format_x(unsigned int nbr, t_format *fmt)
 		else
 			count += ft_putf_hex(nbr, fmt->preci);
 	}
+	count += ft_padding_right(*fmt);
+	return (count);
+}
+
+int	ft_format_p(unsigned long nbr, t_format *fmt)
+{
+	int count;
+
+	count = 0;
+	fmt->preci = ft_ruler_p(nbr, fmt->preci);
+	count += ft_padding_left(*fmt);
+	count += write(1, "0x", 2);
+	count += ft_padding_0(*fmt);
+	if (nbr || fmt->preci > 2)
+		count += ft_putf_p(nbr, fmt->preci - 2);
 	count += ft_padding_right(*fmt);
 	return (count);
 }
